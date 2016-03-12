@@ -12,7 +12,6 @@ from adabot import *
 from seekrits import *
 
 t = Twitter( auth=OAuth(OAUTH_TOKEN, OAUTH_SECRET, CONSUMER_KEY, CONSUMER_SECRET) )
-
 #boardRevision = GPIO.RPI_REVISION
 GPIO.setmode(GPIO.BCM) # use real GPIO numbering
 GPIO.setup(23,GPIO.IN, pull_up_down=GPIO.PUD_UP)
@@ -22,8 +21,8 @@ GPIO.setup(24,GPIO.IN, pull_up_down=GPIO.PUD_UP)
 pygame.init()
 
 # set up the window
-VIEW_WIDTH = 1248
-VIEW_HEIGHT = 688
+VIEW_WIDTH = 1024
+VIEW_HEIGHT = 576
 pygame.display.set_caption('KEGBOT')
 lastTweet = 0
 view_mode = 'normal'
@@ -32,10 +31,9 @@ view_mode = 'normal'
 pygame.mouse.set_visible(False)
 
 # set up the flow meters
-fm = FlowMeter('metric', 'beer')
-fm2 = FlowMeter('metric', 'root beer')
+fm = FlowMeter('metric', ["beer"])
+fm2 = FlowMeter('metric', ["root beer"])
 tweet = ''
-
 # set up the colors
 BLACK = (0,0,0)
 WHITE = (255,255,255)
@@ -199,6 +197,13 @@ while True:
     lastTweet = int(time.time() * FlowMeter.MS_IN_A_SECOND)
     fm2.thisPour = 0.0
     tweetPour(tweet)
+    
+  # reset flow meter after each pour (2 secs of inactivity)
+  if (fm.thisPour <= 0.23 and currentTime - fm.lastClick > 2000):
+    fm.thisPour = 0.0
+    
+  if (fm2.thisPour <= 0.23 and currentTime - fm2.lastClick > 2000):
+    fm2.thisPour = 0.0
 
   # Update the screen
   renderThings(fm, fm2, tweet, windowSurface, basicFont)
