@@ -24,6 +24,11 @@ Create a file called: /etc/modprobe.d/rtl8192cu-blacklist.conf
     
         blacklist rtl8192cu
 
+1. Connecting the Flow Meter to PI GPIO
+
+![wiring](doc//water-flow-wiring.jpg)
+
+
 1. To complete the setup I followed these [install instructions](https://learn.adafruit.com/adafruit-keg-bot/raspberry-pi-code)
 
         git clone https://github.com/adafruit/Kegomatic.git
