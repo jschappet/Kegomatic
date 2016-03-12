@@ -9,6 +9,20 @@ It was easy to setup and adapt to my purposes.
 ## Parts
 
 1. Raspberry Pi
-1. (Flow meter)[link here]
+1. [https://www.adafruit.com/products/828](Flow Meter)
+
+
+# Setting up the Pi
+
+1. Disable Power management, create a file called: /etc/modprobe.d/8192cu.conf, add the following line:
+    
+    options 8192cu rtw_power_mgnt=0 rtw_enusbss=0
+
+
+1. If you are using wireless, I found that I had to disable rtl8192 as well:
+Create a file called: /etc/modprobe.d/rtl8192cu-blacklist.conf
+    
+    blacklist rtl8192cu
+
 
 
