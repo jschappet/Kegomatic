@@ -9,7 +9,7 @@ It was easy to setup and adapt to my purposes.
 ## Parts
 
 1. Raspberry Pi
-1. [https://www.adafruit.com/products/828](Flow Meter)
+1. [Flow Meter](https://www.adafruit.com/products/828)
 
 
 # Setting up the Pi
@@ -24,5 +24,15 @@ Create a file called: /etc/modprobe.d/rtl8192cu-blacklist.conf
     
     blacklist rtl8192cu
 
+1. To complete the setup I followed these [install instructions](https://learn.adafruit.com/adafruit-keg-bot/raspberry-pi-code)
+
+    git clone https://github.com/adafruit/Kegomatic.git
+    
+    sudo -i wget https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py -O - | python
+    
+    sudo easy_install twitter
+    sudo easy_install simplejson
+    sudo easy_install httplib2
+    #sudo easy_install python-oauth2 -- Not using this one
 
 
