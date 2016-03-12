@@ -27,12 +27,12 @@ Create a file called: /etc/modprobe.d/rtl8192cu-blacklist.conf
 1. To complete the setup I followed these [install instructions](https://learn.adafruit.com/adafruit-keg-bot/raspberry-pi-code)
 
     git clone https://github.com/adafruit/Kegomatic.git
-    
     sudo -i wget https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py -O - | python
-    
     sudo easy_install twitter
     sudo easy_install simplejson
     sudo easy_install httplib2
-    #sudo easy_install python-oauth2 -- Not using this one
+    sudo easy_install python-oauth2
+
+
 
 
