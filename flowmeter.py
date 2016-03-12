@@ -58,6 +58,12 @@ class FlowMeter():
       return str(round(self.flow,3)) + ' L/s'
     else:
       return str(round(self.flow * FlowMeter.PINTS_IN_A_LITER, 3)) + ' pints/s'
+
+  def getThisPour(self):
+    if(self.displayFormat == 'metric'):
+      return str(round(self.thisPour,3))
+    else:
+      return str(round(self.thisPour * FlowMeter.PINTS_IN_A_LITER, 3))
   
   def getFormattedThisPour(self):
     if(self.displayFormat == 'metric'):
