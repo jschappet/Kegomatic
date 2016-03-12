@@ -1,4 +1,4 @@
-# Kegomatic 
+# Water Flow Meter 
 This is a project copied from Adafruit, thanks guys
 
 ## Purpose
