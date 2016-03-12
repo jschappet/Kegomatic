@@ -26,6 +26,10 @@ Create a file called: /etc/modprobe.d/rtl8192cu-blacklist.conf
 
 1. Connecting the Flow Meter to PI GPIO
 
+- RED - 5v Power
+- BLACK - Ground 
+- Yellow - GPIO 22 
+
 ![wiring](doc//water-flow-wiring.jpg)
 
 
