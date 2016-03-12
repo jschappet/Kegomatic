@@ -31,7 +31,8 @@ Create a file called: /etc/modprobe.d/rtl8192cu-blacklist.conf
         sudo easy_install twitter
         sudo easy_install simplejson
         sudo easy_install httplib2
-        sudo easy_install python-oauth2
+        #sudo easy_install python-oauth2
+        sudo easy_install requests
 
 
 
